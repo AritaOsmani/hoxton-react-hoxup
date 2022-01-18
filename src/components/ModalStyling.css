@@ -1,0 +1,48 @@
+.modal-container{
+    width: 100vw;
+    height:100vh;
+    display: grid;
+    place-content: center;
+    position:absolute;
+    top:0;
+    left:0;
+    backdrop-filter: blur(2px);
+    background-color: #00000030;
+    z-index: 20;
+}
+.add-user-modal{
+  display: grid;
+  gap:15px;
+  background-color: white;
+ position: relative;
+ padding:30px;
+ border-radius: 5px;
+
+}
+.add-form{
+    display: grid;
+    gap:10px;
+    
+}
+.add-form input{
+    border: solid 1px black;
+    display: block;
+    height:30px;
+}
+.create-btn{
+    background-color: #009688;
+    color:white;
+    margin:auto;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top:10px;
+}
+.close-btn{
+    position: absolute;
+    top:0;
+    right:0;
+    /* background-color:#009688; */
+    border-radius: 50%;
+    color:#009688;
+    padding: 5px 10px;
+}

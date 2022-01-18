@@ -1,27 +1,22 @@
 import { useEffect, useState } from "react"
-import AddNewUser from "../components/AddNewUser"
+import AddNewUserBtn from "../components/AddNewUserBtn"
+import AddUser from "../components/AddUser"
 import Users from "../components/Users"
 
-function LogIn() {
-    const [users, setUsers] = useState([])
-
-    function getUsersFromServer() {
-        fetch(`http://localhost:4000/users`).then(res => res.json()).then(userInServer => setUsers(userInServer))
-    }
-
-    useEffect(getUsersFromServer, [])
-
-
+function LogIn(props) {
     return <div className="main-wrapper login">
         <section className="login-section">
             <h2>Choose your user!</h2>
             <ul>
-                {users.map(user => <Users key={user.id} user={user} />)}
+                {props.users.map(user => <Users key={user.id} user={user} />)}
 
 
-                <AddNewUser />
+                <AddNewUserBtn setModal={props.setModal} />
+
             </ul>
+
         </section>
+
     </div>
 
 }
