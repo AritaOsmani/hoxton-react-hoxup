@@ -8,7 +8,7 @@ function LogIn(props) {
         <section className="login-section">
             <h2>Choose your user!</h2>
             <ul>
-                {props.users.map(user => <Users key={user.id} user={user} />)}
+                {props.users.map(user => <Users key={user.id} user={user} setCurrentUser={props.setCurrentUser} />)}
 
 
                 <AddNewUserBtn setModal={props.setModal} />
