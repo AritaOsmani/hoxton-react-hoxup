@@ -1,3 +1,6 @@
+import SearchForm from "../components/AsideMenu/SearchForm"
+import SideChat from "../components/AsideMenu/SideChat"
+
 function AsideMenu(props) {
     return <aside>
         {/* <!-- Side Header --> */}
@@ -13,21 +16,11 @@ function AsideMenu(props) {
         </header>
 
         {/* <!-- Search form --> */}
-        <form className="aside__search-container">
-            <input
-                type="search"
-                name="messagesSearch"
-                placeholder="Search chats"
-                value=""
-            />
-        </form>
+        <SearchForm />
 
-        {/* <!--
-
-    Side Chat List goes here. Check side-chat-list.html
-
--->
+        {/* <!-- Side Chat List goes here. Check side-chat-list.html-->
     <!--  --> */}
+        <SideChat />
     </aside>
 }
 export default AsideMenu

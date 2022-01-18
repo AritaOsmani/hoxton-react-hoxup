@@ -2,11 +2,11 @@
 import MainChat from "../components/MainChat/MainChat"
 import AsideMenu from "./AsideMenu"
 
-function MainPage() {
+function MainPage(props) {
 
     return <div className="main-wrapper">
         {/* <!-- Side Panel --> */}
-        <AsideMenu />
+        <AsideMenu currentUser={props.currentUser} />
 
         {/* <!-- Main Chat Section --> */}
         <MainChat />
