@@ -20,7 +20,7 @@ function AsideMenu(props) {
 
         {/* <!-- Side Chat List goes here. Check side-chat-list.html-->
     <!--  --> */}
-        <SideChat />
+        <SideChat setModal={props.setModal} />
     </aside>
 }
 export default AsideMenu

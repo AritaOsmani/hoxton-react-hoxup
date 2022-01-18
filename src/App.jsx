@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
 import AddUser from "./components/AddUser"
+import StartConversationModal from "./components/StartConversationModal"
 import LogIn from "./pages/LogIn"
 import MainPage from "./pages/MainPage"
 import MainPageAside from "./pages/MainPageAside"
@@ -20,10 +21,11 @@ function App() {
 
     <main>
       {modal === 'add' && <AddUser setModal={setModal} users={users} setUsers={setUsers} />}
+      {modal === 'start' && <StartConversationModal setModal={setModal} users={users} currentUser={currentUser} />}
       <Routes>
         <Route path='/login' element={<LogIn setModal={setModal} users={users} setCurrentUser={setCurrentUser} />} />
         {/* <Route path='/logged-in/:id' element={<MainPage currentUser={currentUser} />} /> */}
-        <Route path='/logged-in' element={<MainPageAside currentUser={currentUser} />} />
+        <Route path='/logged-in' element={<MainPageAside currentUser={currentUser} setModal={setModal} />} />
 
       </Routes>
     </main>
