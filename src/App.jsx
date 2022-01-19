@@ -10,18 +10,32 @@ function App() {
   const [modal, setModal] = useState('')
   const [users, setUsers] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
+  const [conversations, setConversations] = useState([])
 
   function getUsersFromServer() {
     fetch(`http://localhost:4000/users`).then(res => res.json()).then(userInServer => setUsers(userInServer))
   }
 
+  function getConversationsFromServer() {
+    fetch(`http://localhost:4000/conversations`).then(res => res.json()).then(conversationInServer => setConversations(conversationInServer))
+  }
+
   useEffect(getUsersFromServer, [])
+  useEffect(getConversationsFromServer, [])
 
   return (
 
     <main>
       {modal === 'add' && <AddUser setModal={setModal} users={users} setUsers={setUsers} />}
-      {modal === 'start' && <StartConversationModal setModal={setModal} users={users} currentUser={currentUser} />}
+
+      {modal === 'start' &&
+        <StartConversationModal
+          setModal={setModal}
+          users={users}
+          currentUser={currentUser}
+          conversations={conversations}
+          setConversations={setConversations}
+        />}
       <Routes>
         <Route path='/login' element={<LogIn setModal={setModal} users={users} setCurrentUser={setCurrentUser} />} />
         {/* <Route path='/logged-in/:id' element={<MainPage currentUser={currentUser} />} /> */}

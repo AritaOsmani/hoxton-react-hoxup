@@ -36,6 +36,29 @@
       "id": 5
     }
   ],
-  "messages": [],
-  "conversations": []
+  "messages": [
+    {
+      "userId": 2,
+      "messageText": "Hello! 👋 ",
+      "conversationId": 1,
+      "id": 1
+    }
+  ],
+  "conversations": [
+    {
+      "userId": 2,
+      "participantId": 3,
+      "id": 1
+    },
+    {
+      "userId": 5,
+      "participantId": 1,
+      "id": 2
+    },
+    {
+      "userId": 4,
+      "participantId": 2,
+      "id": 3
+    }
+  ]
 }

@@ -14,8 +14,13 @@ function StartConversationModal(props) {
             <h3>Pick a user to talk to</h3>
             <ul>
                 {usersToStartConversationWith.map(user =>
-                    <UserToTalkTo user={user}
+                    <UserToTalkTo
+                        user={user}
                         key={user.id}
+                        currentUser={props.currentUser}
+                        conversations={props.conversations}
+                        setConversations={props.setConversations}
+                        setModal={props.setModal}
                     />
                 )}
 
