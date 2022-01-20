@@ -1,4 +1,6 @@
-function Chat() {
+
+function Chat(props) {
+
     return <li>
         <button className="chat-button">
             <img
@@ -6,10 +8,10 @@ function Chat() {
                 height="50"
                 width="50"
                 alt=""
-                src="https://robohash.org/2"
+                src={props.talkingToUser.avatar}
             />
             <div>
-                <h3>Tin Man</h3>
+                <h3>{`${props.talkingToUser.firstName} ${props.talkingToUser.lastName}`}</h3>
                 <p>Last message</p>
             </div>
         </button>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import AddUser from "./components/AddUser"
 import StartConversationModal from "./components/StartConversationModal"
 import LogIn from "./pages/LogIn"
@@ -37,9 +37,10 @@ function App() {
           setConversations={setConversations}
         />}
       <Routes>
+        <Route index element={<Navigate replace to='/login' />} />
         <Route path='/login' element={<LogIn setModal={setModal} users={users} setCurrentUser={setCurrentUser} />} />
         {/* <Route path='/logged-in/:id' element={<MainPage currentUser={currentUser} />} /> */}
-        <Route path='/logged-in' element={<MainPageAside currentUser={currentUser} setModal={setModal} />} />
+        <Route path='/logged-in' element={<MainPageAside currentUser={currentUser} setModal={setModal} modal={modal} users={users} />} />
 
       </Routes>
     </main>
