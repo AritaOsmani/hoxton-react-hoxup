@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import AddUser from "./components/AddUser"
 import StartConversationModal from "./components/StartConversationModal"
 import LogIn from "./pages/LogIn"
+import LogOutDeleteModal from "./pages/LogOutDeleteModal"
 import MainPage from "./pages/MainPage"
 import MainPageAside from "./pages/MainPageAside"
 
@@ -49,7 +50,15 @@ function App() {
         setModal('')
       })
   }
-
+  function deleteUser() {
+    return fetch(`http://localhost:4000/users/${currentUser.id}`, {
+      method: 'DELETE'
+    }).then(res => res.json()).then(res => {
+      let newUsers = JSON.parse(JSON.stringify(users))
+      newUsers = newUsers.filter(u => u.id !== currentUser.id);
+      setUsers(newUsers)
+    })
+  }
   return (
 
     <main>
@@ -61,9 +70,16 @@ function App() {
           addNewConversation={addNewConversation}
           setModal={setModal}
         />}
+      {modal === 'log-out' &&
+        <LogOutDeleteModal
+          setModal={setModal}
+          setCurrentUser={setCurrentUser}
+          deleteUser={deleteUser}
+        />}
+
       <Routes>
         <Route index element={<Navigate replace to='/login' />} />
-        <Route path='/login' element={<LogIn setModal={setModal} users={users} setCurrentUser={setCurrentUser} />} />
+        <Route path='/login' element={<LogIn users={users} setCurrentUser={setCurrentUser} setModal={setModal} />} />
         <Route path='/logged-in/:id' element={<MainPageAside userConversations={userConversations} currentUser={currentUser} setModal={setModal} modal={modal} users={users} />} />
         <Route path='/logged-in' element={<MainPageAside userConversations={userConversations} currentUser={currentUser} setModal={setModal} modal={modal} users={users} />} />
 

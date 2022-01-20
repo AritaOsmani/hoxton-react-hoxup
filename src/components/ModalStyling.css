@@ -62,3 +62,24 @@
 .start-conversation-modal ul{
     overflow: auto;
 }
+/* Log out modal */
+.log-out-delete-modal{
+    background-color: white;
+    position: relative;
+    padding:30px;
+    display: grid;
+    gap:10px;
+    width:200px;
+    place-items: center;
+    border-radius: 5px;
+}
+.log-out-delete-modal .delete-btn,.log-out-btn{
+    width: 100%;
+    text-align: center;
+}
+.log-out-delete-modal button:hover{
+    background-color: #eeeeee;
+}
+.delete-btn{
+    color:red;
+}

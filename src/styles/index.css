@@ -116,7 +116,22 @@ textarea:focus {
   justify-content: left;
   gap: 2rem;
 }
-
+.panel-side{
+  min-height: 4rem;
+  padding: 0.5rem 0.9rem;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--panels-background);
+  border-left: 1px solid var(--borders);
+  gap:15px;
+}
+.fa-cog{
+  font-size: 30px;
+  cursor:pointer;
+  margin-left:200px;
+}
 .panel {
   min-height: 4rem;
   padding: 0.5rem 0.9rem;

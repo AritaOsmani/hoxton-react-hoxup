@@ -5,6 +5,7 @@ function ChatHeader(props) {
 
         <h3>{`${props.participant.firstName} ${props.participant.lastName}`}</h3>
 
+
     </header>
 }
 export default ChatHeader
