@@ -42,6 +42,18 @@
       "messageText": "Hello! 👋 ",
       "conversationId": 1,
       "id": 1
+    },
+    {
+      "userId": 5,
+      "messageText": "Hey! 👋 ",
+      "conversationId": 1,
+      "id": 1
+    },
+    {
+      "userId": 5,
+      "messageText": "Hey there! 👋 ",
+      "conversationId": 2,
+      "id": 1
     }
   ],
   "conversations": [
@@ -64,6 +76,11 @@
       "userId": 2,
       "participantId": 1,
       "id": 4
+    },
+    {
+      "userId": 5,
+      "participantId": 1,
+      "id": 5
     }
   ]
 }

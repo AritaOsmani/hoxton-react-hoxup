@@ -7,8 +7,9 @@ import AsideMenu from "./AsideMenu"
 function MainPageAside(props) {
     const navigate = useNavigate()
     const params = useParams()
-    const [currentConversation, setCurrentConversation] = useState({})
+    const [currentConversation, setCurrentConversation] = useState(null)
     const [participant, setParticipant] = useState(null)
+
 
     useEffect(function () {
         if (props.currentUser === null) {
@@ -20,6 +21,7 @@ function MainPageAside(props) {
         if (params.id) {
             fetch(`http://localhost:4000/conversations/${params.id}?_embed=messages`).then(res => res.json())
                 .then(conversation =>
+
                     setCurrentConversation(conversation)
                 )
         }
@@ -27,15 +29,18 @@ function MainPageAside(props) {
     if (props.currentUser === null) return <h1>Not signed in</h1>
 
 
-    // let participant = props.users.find(user => user.id === props.currentConversation.participantId)
-    // console.log('participant', participant)
-
-
-
     return <div className="main-wrapper">
         {/* <!-- Side Panel --> */}
         <AsideMenu currentUser={props.currentUser} setModal={props.setModal} userConversations={props.userConversations} users={props.users} setParticipant={setParticipant} />
-        {params.id ? <MainChat currentConversation={currentConversation} users={props.users} participant={participant} /> : null}
+
+        {params.id ?
+            <MainChat
+                currentConversation={currentConversation}
+                // users={props.users}
+                participant={participant}
+                currentUser={props.currentUser}
+            />
+            : null}
 
     </div>
 }

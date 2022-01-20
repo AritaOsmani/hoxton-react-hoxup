@@ -3,7 +3,7 @@ import ChatHeader from "./ChatHeader"
 import Messages from "./Messages"
 
 function MainChat(props) {
-
+    if (props.currentConversation === null) return <h1>No conversations</h1>
     console.log('currentConversation: ', props.currentConversation)
     return <main className="conversation">
         {/* <!-- Chat header --> */}
@@ -11,7 +11,7 @@ function MainChat(props) {
 
 
         {/* <!-- The Messages List will go here. Check main-messages-list.html   --> */}
-        <Messages />
+        <Messages currentConversation={props.currentConversation} currentUser={props.currentUser} />
 
         {/* <!-- Message Box --> */}
         <ChatFooter />
