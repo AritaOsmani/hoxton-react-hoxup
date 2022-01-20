@@ -10,9 +10,10 @@ function SideChat(props) {
         {props.userConversations.map(user => {
             const userToTalkToId = props.currentUser.id === user.userId ? user.participantId : user.userId;
             const talkingToUser = props.users.find(u => u.id === userToTalkToId)
+
             return (
 
-                <Chat key={user.id} talkingToUser={talkingToUser} />
+                <Chat key={user.id} talkingToUser={talkingToUser} user={user} setParticipant={props.setParticipant} />
             )
 
         })}

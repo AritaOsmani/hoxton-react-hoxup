@@ -119,17 +119,22 @@ textarea:focus {
 
 .panel {
   min-height: 4rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.9rem;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  justify-content: start;
+  /* justify-content: start; */
   background-color: var(--panels-background);
   border-left: 1px solid var(--borders);
+ 
 }
 
 .panel h3 {
   margin-left: 1rem;
+  justify-self: end;
+}
+.panel .avatar{
+  width: 50px;
 }
 
 .avatar {
@@ -222,6 +227,18 @@ textarea:focus {
   grid-template-columns: 1fr auto;
 }
 
+/* .chatHeader{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  place-items: center;
+  gap:20px;
+}
+.chatHeader img{
+  width: 50px;
+}
+.chatHeader h2{
+  justify-self: end;
+} */
 @media screen and (min-width: 1440px) {
   #root {
     padding-top: 2.5vh;

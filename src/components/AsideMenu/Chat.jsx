@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom"
 
 function Chat(props) {
-
+    const navigate = useNavigate()
     return <li>
-        <button className="chat-button">
+        <button className="chat-button" onClick={() => {
+            props.setParticipant(props.talkingToUser);
+            navigate(`/logged-in/${props.user.id}`)
+        }}>
             <img
                 className="avatar"
                 height="50"
