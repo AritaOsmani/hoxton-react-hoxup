@@ -2,7 +2,7 @@ import './ModalStyling.css'
 import UserToTalkTo from './UserToTalkTo'
 function StartConversationModal(props) {
 
-    let usersToStartConversationWith = props.users.filter(user => user.id !== props.currentUser.id)
+
     return <div className="modal-container">
         <div className="start-conversation-modal">
             <button
@@ -13,14 +13,13 @@ function StartConversationModal(props) {
             >X</button>
             <h3>Pick a user to talk to</h3>
             <ul>
-                {usersToStartConversationWith.map(user =>
+                {props.newPeopleToTalkTo.map(user =>
                     <UserToTalkTo
-                        user={user}
+                        addNewConversation={props.addNewConversation}
                         key={user.id}
-                        currentUser={props.currentUser}
-                        conversations={props.conversations}
-                        setConversations={props.setConversations}
-                        setModal={props.setModal}
+                        user={user}
+
+
                     />
                 )}
 

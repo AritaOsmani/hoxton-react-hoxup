@@ -9,7 +9,7 @@ function MainPage(props) {
         <AsideMenu currentUser={props.currentUser} />
 
         {/* <!-- Main Chat Section --> */}
-        <MainChat />
+
 
     </div>
 

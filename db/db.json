@@ -46,34 +46,14 @@
   ],
   "conversations": [
     {
-      "userId": 2,
-      "participantId": 3,
+      "userId": 5,
+      "participantId": 2,
       "id": 1
     },
     {
       "userId": 5,
-      "participantId": 1,
+      "participantId": 4,
       "id": 2
-    },
-    {
-      "userId": 4,
-      "participantId": 2,
-      "id": 3
-    },
-    {
-      "userId": 4,
-      "participantId": 5,
-      "id": 4
-    },
-    {
-      "userId": 5,
-      "participantId": 2,
-      "id": 5
-    },
-    {
-      "userId": 5,
-      "participantId": 3,
-      "id": 6
     }
   ]
 }

@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react/cjs/react.development"
+import MainChat from "../components/MainChat/MainChat"
 import StartConversationModal from "../components/StartConversationModal"
 import AsideMenu from "./AsideMenu"
 
 function MainPageAside(props) {
     const navigate = useNavigate()
-    const [userConversations, setUserConversations] = useState([])
+
 
     useEffect(function () {
         if (props.currentUser === null) {
@@ -15,15 +16,6 @@ function MainPageAside(props) {
     }, [props.currentUser])
 
 
-    function getUserConversations() {
-        fetch(`http://localhost:4000/conversations?userId=${props.currentUser.id}`).then(res => res.json()).then(conversationsInServer => setUserConversations(conversationsInServer))
-    }
-    useEffect(() => {
-        if (props.currentUser === null) return
-
-        getUserConversations()
-
-    }, [props.currentUser])
 
     // {
     //     props.modal === 'start' &&
@@ -42,7 +34,8 @@ function MainPageAside(props) {
 
     return <div className="main-wrapper">
         {/* <!-- Side Panel --> */}
-        <AsideMenu currentUser={props.currentUser} setModal={props.setModal} userConversations={userConversations} users={props.users} />
+        <AsideMenu currentUser={props.currentUser} setModal={props.setModal} userConversations={props.userConversations} users={props.users} />
+        <MainChat />
     </div>
 }
 export default MainPageAside
