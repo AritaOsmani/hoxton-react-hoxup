@@ -5,5 +5,5 @@ function Message(props) {
         </p>
     </li>
 }
-// className={props.message.userId === props.currentUser.id ? 'outgoing' : null}
+
 export default Message

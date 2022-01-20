@@ -54,6 +54,30 @@
       "messageText": "Hey there! 👋 ",
       "conversationId": 2,
       "id": 1
+    },
+    {
+      "userId": 5,
+      "messageText": "heyy",
+      "conversationId": "1",
+      "id": 2
+    },
+    {
+      "userId": 5,
+      "messageText": "hey again",
+      "conversationId": 1,
+      "id": 3
+    },
+    {
+      "userId": 5,
+      "messageText": "Hey Ed",
+      "conversationId": 5,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "messageText": "Hello there",
+      "conversationId": 5,
+      "id": 5
     }
   ],
   "conversations": [

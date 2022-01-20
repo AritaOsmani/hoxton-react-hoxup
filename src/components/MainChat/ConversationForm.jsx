@@ -1,11 +1,17 @@
-function ConversationForm() {
+function ConversationForm(props) {
 
-    return <form className="panel conversation__message-box">
+    return <form className="panel conversation__message-box"
+        onSubmit={(event) => {
+            event.preventDefault();
+            const message = event.target.messageInput.value
+            props.addNewMessage(message)
+            event.target.reset()
+        }}>
         <input
             type="text"
             placeholder="Type a message"
-            // rows={1}
-            value=""
+            // value=""
+            name='messageInput'
         /><button type="submit">
             {/* <!-- This is the send button --> */}
             <svg

@@ -14,7 +14,7 @@ function MainChat(props) {
         <Messages currentConversation={props.currentConversation} currentUser={props.currentUser} />
 
         {/* <!-- Message Box --> */}
-        <ChatFooter />
+        <ChatFooter currentConversation={props.currentConversation} addNewMessage={props.addNewMessage} />
     </main>
 }
 export default MainChat
